@@ -1,0 +1,6 @@
+INDEX VERSION 1.122+/Users/ABrookes/ServerSideWebApp/.metadata/.plugins/org.eclipse.wst.jsdt.core/indexes
+2089348824.index
+589805502.index
+1366456142.index
+4159510258.index
+25882816.index
