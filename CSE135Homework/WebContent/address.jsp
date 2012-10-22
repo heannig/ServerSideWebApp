@@ -10,10 +10,12 @@
 	String firstName = request.getParameter("firstName");
 	String middleInitial = request.getParameter("middleInitial");
 	String lastName = request.getParameter("lastName");
+	String country = request.getParameter("country");
 
 	session.setAttribute("firstName", firstName);
 	session.setAttribute("middleInitial", middleInitial);
 	session.setAttribute("lastName", lastName);
+	session.setAttribute("country", country);
 %>
 
 </head>
@@ -28,6 +30,15 @@
 		
 	</fieldset>
 	
+	
+	<%
+		if(session.getAttribute("country").equals("United States")) {
+			out.println("You are from the united states!");
+		} else {
+			out.println("<a href=\"degreesLocation\">No further information required. Go to the next step.</a>");
+		}
+	
+	%>
 	
 
 
