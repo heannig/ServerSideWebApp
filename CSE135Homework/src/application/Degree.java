@@ -41,11 +41,11 @@ public class Degree {
 		this.disipline = disipline;
 	}
 
-	public String getMonth() {
+	public int getMonth() {
 		return month;
 	}
 
-	public void setMonth(String month) {
+	public void setMonth(int month) {
 		this.month = month;
 	}
 
