@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app>
+	<welcome-file-list>
+		<welcome-file>index.html</welcome-file>
+	</welcome-file-list>
+	<servlet>
+		<servlet-name>entry</servlet-name>
+		<jsp-file>/entry.jsp</jsp-file>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>entry</servlet-name>
+		<url-pattern>/entry</url-pattern>
+	</servlet-mapping>
+
+</web-app>
