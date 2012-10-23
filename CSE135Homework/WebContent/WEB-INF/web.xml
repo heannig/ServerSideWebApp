@@ -24,4 +24,24 @@
 		<url-pattern>/address</url-pattern>
 	</servlet-mapping>
 
+	<servlet>
+		<servlet-name>degreeLocation</servlet-name>
+		<jsp-file>/degreeLocation.jsp</jsp-file>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>degreeLocation</servlet-name>
+		<url-pattern>/degreeLocation</url-pattern>
+	</servlet-mapping>
+	
+		<servlet>
+		<servlet-name>chooseUniversity</servlet-name>
+		<jsp-file>/chooseUniversity.jsp</jsp-file>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>chooseUniversity</servlet-name>
+		<url-pattern>/chooseUniversity</url-pattern>
+	</servlet-mapping>
+	
 </web-app>

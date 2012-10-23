@@ -48,7 +48,7 @@
 	<%
 		if (session.getAttribute("country").equals("United States")) {
 	%>
-	<FORM ACTION="./degree" METHOD="post">
+	<FORM ACTION="./degreeLocation" METHOD="post">
 		<label FOR="streetAddress">Address</label> <INPUT TYPE="TEXT"
 			NAME="streetAddress" /><br /> <label FOR="city">City</label> <INPUT
 			TYPE="TEXT" NAME="city" /><br /> <label FOR="zip">Zip Code</label>
