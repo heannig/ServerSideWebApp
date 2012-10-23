@@ -3,7 +3,8 @@
 	Support s = new Support();
 	String path1 = config.getServletContext().getRealPath(
 			"database/countries_and_states.txt");
-	Vector<CountryState> countries_and_states = s.getCountriesAndStates(path1);
+	Vector<CountryState> countries_and_states = s
+			.getCountriesAndStates(path1);
 %>
 <HTML>
 <HEAD>
@@ -16,19 +17,21 @@
 			NAME="firstName" /><br /> <label FOR="middleInitial">Middle
 			Initial</label> <INPUT TYPE="TEXT" NAME="middleInitial" /><br /> <label
 			FOR="lastName">Last Name</label> <INPUT TYPE="TEXT" NAME="lastName" /><br />
-		<select NAME="country">
+		<label FOR="country">Country</label> <select NAME="country">
 			<%
-				for (int i = 0; i < countries_and_states.size(); i++){
-					if(countries_and_states.get(i).isCountry){
-					out.println("<option value=\""
-							+ (String) ((CountryState) countries_and_states.get(i)).countryStateName
-							+ "\">"
-							+ (String) ((CountryState) countries_and_states.get(i)).countryStateName
-							+ "</option>");
-					}}
+				for (int i = 0; i < countries_and_states.size(); i++) {
+					if (countries_and_states.get(i).isCountry) {
+						out.println("<option value=\""
+								+ (String) ((CountryState) countries_and_states
+										.get(i)).countryStateName
+								+ "\">"
+								+ (String) ((CountryState) countries_and_states
+										.get(i)).countryStateName + "</option>");
+					}
+				}
 			%>
 
-		</select> <INPUT TYPE="submit" VALUE="Submit Personal Data" />
+		</select><br /> <INPUT TYPE="submit" VALUE="Submit Personal Data" />
 	</FORM>
 </BODY>
 </HTML>
