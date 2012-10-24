@@ -15,17 +15,6 @@ public class Degree {
 		this.year = "";
 		this.month = "";
 	}
-	
-	public Degree(String location, String university, String discipline, String title, String gpa, String year, String month) {
-		this.id = new UID();
-		this.location = location;
-		this.university = university;
-		this.discipline = discipline;
-		this.title = title;
-		this.gpa = gpa;
-		this.year = year;
-		this.month = month;
-	}
 
 	public String getLocation() {
 		return location;
