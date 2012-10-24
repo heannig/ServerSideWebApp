@@ -1,4 +1,4 @@
-<%@page import="support.*, java.util.*"%>
+<%@page import="support.*, application.*, java.util.*"%>
 
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
@@ -9,21 +9,24 @@
 <title>Choose Discipline</title>
 
 <%
-	session.setAttribute("university",
-			request.getParameter("university"));
+	// add the university information from the last page to the degree
+	Vector<Degree> degreesList = (Vector)session.getAttribute("degreesList");
+	degreesList.lastElement().setUniversity(request.getParameter("university"));
 
+	// get discipline list
 	Support s = new Support();
 	String path = config.getServletContext().getRealPath(
 			"database/disciplines.txt");
-
+	
 	Vector disciplines = s.getDisciplines(path);
 %>
 
 </head>
 <body>
-	<h1>Choose Discipline</h1>
+	<h1>Choose Discipline (3/4)</h1>
 
-	<form action="./degreeList" method="POST">
+	<form action="./degreesList" method="POST">
+	<p>Mature</p>
 		<%
 			for (int i = 0; i < disciplines.size(); i++) {
 				out.println("<label for=\""+(String) disciplines.get(i)+"\">" + (String) disciplines.get(i)
@@ -33,7 +36,7 @@
 		%>
 	
 	<label for="ownDiscipline">Not listed?</label>
-	<input type="text" name="ownDiscipline" /><br />
+	<input type="text" name="ownDiscipline" /><br /><br /><br />
 		
 	<label for="month">Month</label>
 	<input type="text" name="month" id="month"/><br />
@@ -46,9 +49,9 @@
 	
 	<label for="title">Title-of-degree</label>
 	<select name="title">
-		<option value="bs">Bachelor</option>
-		<option value="ms">Master</option>
-		<option value="phd">PhD</option>
+		<option value="Bachelor">Bachelor</option>
+		<option value="Master">Master</option>
+		<option value="PhD">PhD</option>
 	</select><br />
 
 	

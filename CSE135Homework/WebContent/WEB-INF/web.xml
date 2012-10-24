@@ -3,7 +3,7 @@
 	<welcome-file-list>
 		<welcome-file>index.html</welcome-file>
 	</welcome-file-list>
-	
+
 	<servlet>
 		<servlet-name>entry</servlet-name>
 		<jsp-file>/entry.jsp</jsp-file>
@@ -33,8 +33,8 @@
 		<servlet-name>degreeLocation</servlet-name>
 		<url-pattern>/degreeLocation</url-pattern>
 	</servlet-mapping>
-	
-		<servlet>
+
+	<servlet>
 		<servlet-name>chooseUniversity</servlet-name>
 		<jsp-file>/chooseUniversity.jsp</jsp-file>
 	</servlet>
@@ -43,5 +43,47 @@
 		<servlet-name>chooseUniversity</servlet-name>
 		<url-pattern>/chooseUniversity</url-pattern>
 	</servlet-mapping>
+
+	<servlet>
+		<servlet-name>chooseDiscipline</servlet-name>
+		<jsp-file>/chooseDiscipline.jsp</jsp-file>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>chooseDiscipline</servlet-name>
+		<url-pattern>/chooseDiscipline</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+		<servlet-name>degreesList</servlet-name>
+		<jsp-file>/degreesList.jsp</jsp-file>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>degreesList</servlet-name>
+		<url-pattern>/degreesList</url-pattern>
+	</servlet-mapping>
 	
+		<servlet>
+		<servlet-name>specialization</servlet-name>
+		<jsp-file>/specialization.jsp</jsp-file>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>specialization</servlet-name>
+		<url-pattern>/specialization</url-pattern>
+	</servlet-mapping>
+
+		<servlet>
+		<servlet-name>verification</servlet-name>
+		<jsp-file>/verification.jsp</jsp-file>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>verification</servlet-name>
+		<url-pattern>/verification</url-pattern>
+	</servlet-mapping>
+
+
+
 </web-app>

@@ -1,21 +1,31 @@
 package application;
 
+import java.rmi.server.UID;
+
 public class Degree {
-	String location, university, disipline, title;
-	double gpa;
-	int year, month;
-	
-	public Degree(String location) {
-		this.location=location;
-		this.university= "";
-		this.disipline="";
-		this.title="";
-		this.gpa= 0;
-		this.year= 0;
-		this.month=1;
-		
+	private UID id; 
+	private String location, university, discipline, title, gpa, year, month;
+	public Degree() {
+		this.id = new UID();
+		this.location = "";
+		this.university = "";
+		this.discipline = "";
+		this.title = "";
+		this.gpa = "";
+		this.year = "";
+		this.month = "";
 	}
 	
+	public Degree(String location, String university, String discipline, String title, String gpa, String year, String month) {
+		this.id = new UID();
+		this.location = location;
+		this.university = university;
+		this.discipline = discipline;
+		this.title = title;
+		this.gpa = gpa;
+		this.year = year;
+		this.month = month;
+	}
 
 	public String getLocation() {
 		return location;
@@ -33,19 +43,19 @@ public class Degree {
 		this.university = university;
 	}
 
-	public String getDisipline() {
-		return disipline;
+	public String getDiscipline() {
+		return discipline;
 	}
 
-	public void setDisipline(String disipline) {
-		this.disipline = disipline;
+	public void setDiscipline(String disipline) {
+		this.discipline = disipline;
 	}
 
-	public int getMonth() {
+	public String getMonth() {
 		return month;
 	}
 
-	public void setMonth(int month) {
+	public void setMonth(String month) {
 		this.month = month;
 	}
 
@@ -57,22 +67,24 @@ public class Degree {
 		this.title = title;
 	}
 
-	public double getGpa() {
+	public String getGpa() {
 		return gpa;
 	}
 
-	public void setGpa(double gpa) {
+	public void setGpa(String gpa) {
 		this.gpa = gpa;
 	}
 
-	public int getYear() {
+	public String getYear() {
 		return year;
 	}
 
-	public void setYear(int year) {
+	public void setYear(String year) {
 		this.year = year;
 	}
 
-
+	public UID getId() {
+		return id;
+	}
 
 }

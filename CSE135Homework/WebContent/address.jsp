@@ -41,42 +41,45 @@
 		<p>
 			Last name:
 			<%=lastName%></p>
-
+		<p>
+			Country:
+			<%=country%>
 	</fieldset>
-<br/>
-<fieldset>
-	<%
-		if (session.getAttribute("country").equals("United States")) {
-	%>
-	<FORM ACTION="./degreeLocation" METHOD="post">
-		<label FOR="streetAddress">Address</label> <INPUT TYPE="TEXT"
-			NAME="streetAddress" /><br /> <label FOR="city">City</label> <INPUT
-			TYPE="TEXT" NAME="city" /><br /> <label FOR="zip">Zip Code</label>
-		<INPUT TYPE="TEXT" NAME="zip" /><br /> <label FOR="state">State</label>
-		<select NAME="state">
-			<%
-				for (int i = 0; i < countries_and_states.size(); i++) {
-						if (!countries_and_states.get(i).isCountry) {
-							out.println("<option value=\""
-									+ (String) ((CountryState) countries_and_states
-											.get(i)).countryStateName
-									+ "\">"
-									+ (String) ((CountryState) countries_and_states
-											.get(i)).countryStateName + "</option>");
-						}
-					}
-			%>
-			<br />
+	<br />
+	<fieldset>
 
-		</select> </br>
-		<INPUT TYPE="submit" VALUE="Submit Personal Data" />
-	</FORM>
-</fieldset>
-	<%
-		} else {
-			out.println("<a href=\"degreesLocation\">No further information required. Go to the next step.</a>");
-		}
-	%>
+		<FORM ACTION="./degreeLocation" METHOD="post">
+			<label FOR="streetAddress">Address</label> <INPUT TYPE="TEXT"
+				NAME="streetAddress" size="20" /><br /> <label FOR="city" size="20">City</label> <INPUT
+				TYPE="TEXT" NAME="city" /><br /> <label FOR="zip">Zip Code</label>
+			<INPUT TYPE="TEXT" NAME="zip" size="5" maxlength="5"/><br />
+
+			<%
+				if (session.getAttribute("country").equals("United States")) {
+			%>
+			<label FOR="state">State</label> <select NAME="state">
+				<%
+					for (int i = 0; i < countries_and_states.size(); i++) {
+							if (!countries_and_states.get(i).isCountry) {
+								out.println("<option value=\""
+										+ (String) ((CountryState) countries_and_states
+												.get(i)).countryStateName
+										+ "\">"
+										+ (String) ((CountryState) countries_and_states
+												.get(i)).countryStateName + "</option>");
+							}
+						}
+				%>
+
+			</select>
+			<%
+				}
+			%>
+
+			</br> <INPUT TYPE="submit" VALUE="Submit Address" />
+		</FORM>
+	</fieldset>
+
 
 
 
