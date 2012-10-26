@@ -28,6 +28,7 @@
 	<form action="./degreesList" method="POST">
 	<p>Mature</p>
 		<%
+			// create radio boxes for each degree
 			for (int i = 0; i < disciplines.size(); i++) {
 				out.println("<label for=\""+(String) disciplines.get(i)+"\">" + (String) disciplines.get(i)
 						+ "</label><input type=\"radio\" value=\"" + (String) disciplines.get(i)

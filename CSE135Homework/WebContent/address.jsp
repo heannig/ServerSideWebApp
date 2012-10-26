@@ -2,6 +2,7 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
 <%
+	// get all countries and states from the text file
 	Support s = new Support();
 	String path1 = config.getServletContext().getRealPath(
 			"database/countries_and_states.txt");
@@ -15,6 +16,7 @@
 <title>Address</title>
 
 <%
+	// set request parameter from the previous form
 	String firstName = request.getParameter("firstName");
 	String middleInitial = request.getParameter("middleInitial");
 	String lastName = request.getParameter("lastName");
@@ -50,11 +52,13 @@
 
 		<FORM ACTION="./degreeLocation" METHOD="post">
 			<label FOR="streetAddress">Address</label> <INPUT TYPE="TEXT"
-				NAME="streetAddress" size="20" /><br /> <label FOR="city" size="20">City</label> <INPUT
-				TYPE="TEXT" NAME="city" /><br /> <label FOR="zip">Zip Code</label>
-			<INPUT TYPE="TEXT" NAME="zip" size="5" maxlength="5"/><br />
+				NAME="streetAddress" size="20" /><br /> <label FOR="city"
+				size="20">City</label> <INPUT TYPE="TEXT" NAME="city" /><br /> <label
+				FOR="zip">Zip Code</label> <INPUT TYPE="TEXT" NAME="zip" size="5"
+				maxlength="5" /><br />
 
 			<%
+				// if the user's residence is in the us
 				if (session.getAttribute("country").equals("United States")) {
 			%>
 			<label FOR="state">State</label> <select NAME="state">
@@ -76,7 +80,7 @@
 				}
 			%>
 
-			</br> <INPUT TYPE="submit" VALUE="Submit Address" />
+			<br /> <INPUT TYPE="submit" VALUE="Submit Address" />
 		</FORM>
 	</fieldset>
 

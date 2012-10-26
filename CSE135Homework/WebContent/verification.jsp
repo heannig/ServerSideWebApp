@@ -9,6 +9,7 @@
 </head>
 
 <%
+	// if the user comes from the specialization site, set session attributes
 	if (request.getParameter("specialization") != null) {
 		session.setAttribute("specialization",
 				request.getParameter("specialization"));

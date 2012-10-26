@@ -12,6 +12,7 @@
 				degreesList.removeElement(current);				
 			}
 		}
+	// else the user creates a new degree so get all the parameters
 	} else {
 		degreesList.lastElement().setYear(request.getParameter("year"));
 		degreesList.lastElement().setMonth(request.getParameter("month"));
@@ -49,6 +50,7 @@
 	
 	<tbody>
 	<%
+		// print out the degrees list
 		for (int i = 0; i < degreesList.size(); i++) {
 			Degree d = degreesList.get(i);
 	%>

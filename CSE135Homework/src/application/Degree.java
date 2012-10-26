@@ -2,6 +2,11 @@ package application;
 
 import java.rmi.server.UID;
 
+/**
+ * Degree class according to model 1
+ * @author Marco Hendrik Annighoefer
+ *
+ */
 public class Degree {
 	private UID id; 
 	private String location, university, discipline, title, gpa, year, month;

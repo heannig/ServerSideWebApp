@@ -7,6 +7,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>Choose University</title>
 <%
+	
 	Vector<Degree> degreesList = (Vector) session
 			.getAttribute("degreesList");
 	degreesList.lastElement().setLocation(
@@ -17,6 +18,7 @@
 	<h1>Choose University (2/4)</h1>
 
 	<%
+		// get complete university list
 		Support s = new Support();
 		String path = config.getServletContext().getRealPath(
 				"database/universities.txt");
@@ -38,7 +40,7 @@
 		
 		<%
 
-		// iterate over the univserity list
+		// iterate over the univserity list and print out all universities
 		for (int i = 0; i < universityList.size(); i++) {
 			out.println("<td>" + "<a href=\"./chooseDiscipline?university="
 					+ universityList.get(i) + "\">" + universityList.get(i)

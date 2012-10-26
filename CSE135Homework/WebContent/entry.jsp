@@ -1,5 +1,6 @@
 <%@page import="support.*,java.util.*"%>
 <%
+	// load the countries and states file
 	Support s = new Support();
 	String path1 = config.getServletContext().getRealPath(
 			"database/countries_and_states.txt");
@@ -19,6 +20,7 @@
 			FOR="lastName">Last Name</label> <INPUT TYPE="TEXT" NAME="lastName" /><br />
 		<label FOR="country">Country</label> <select NAME="country">
 			<%
+				// print out all countries
 				for (int i = 0; i < countries_and_states.size(); i++) {
 					if (countries_and_states.get(i).isCountry) {
 						out.println("<option value=\""

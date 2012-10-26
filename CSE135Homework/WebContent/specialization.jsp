@@ -19,6 +19,7 @@
 				"database/specializations.txt");
 		Vector specializations = s.getSpecializations(path);
 		
+		// print out the specialization list
 		for(int i=0; i<specializations.size(); i++)
 		      out.println("<option value=\"" + specializations.get(i) + "\">" + specializations.get(i) + "</option>");
 	%>

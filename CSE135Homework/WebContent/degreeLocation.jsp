@@ -2,6 +2,8 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
 <%
+
+	// if the user comes from the address page set session attributes
 	if(request.getParameter("streetAddress") != null) {
 		session.setAttribute("streetAddress", request.getParameter("streetAddress"));
 	}
@@ -12,6 +14,7 @@
 			session.setAttribute("zip", request.getParameter("zip"));
 	}
 
+	// get the complete university list
 	Support s = new Support();
 	String path = config.getServletContext().getRealPath(
 			"database/universities.txt");
@@ -36,6 +39,7 @@
 	<h1>Choose Degree Location (1/4)</h1>
 
 	<%
+		// create a table with all university states/countries
 		out.println("<table><tr>");
 
 		for (int i = 0; i < universities.size(); i++) {
